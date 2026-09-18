@@ -1,48 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Portfolio Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Ayush Gopal — full-stack and backend developer working with TypeScript, React, Node.js, and PostgreSQL.">
+<title>Ayush Gopal — Full-stack Developer</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">Ayush</a>
-        <nav>
-            <a href="#" class="active">Home</a>
-             <a href="#" class="active">Services</a>
-              <a href="#" class="active">Skills</a>
-               <a href="#" class="active">Education</a>
-                <a href="#" class="active">Contacts</a>
-
-        </nav>
-    </header>
-
-    <section class="home">
-        <div class="home-img">
-            <img src="main.jpg" alt="Ayush profile image">
-
-        </div>
-        <div class="home-content">
-        <h1> Hi, it's <span>Ayush</span></h1>
-        <h3 class="typing-text">I'm a <span></span></h3>
-        <p>Web developer. I build things that live on the internet. From solving tricky problems to crafting smooth user experiences, I enjoy every part of the development process. Constantly learning, experimenting, and improving — that’s what keeps me going as a developer.</p>
-        <div class="social-icons">
-
-         <a href="https://www.linkedin.com/in/ayush-gopal-a963b8296/"><i class="fa-brands fa-linkedin"></i></a>
-         <a href="https://github.com/ayushgopal17"><i class="fa-brands fa-github"></i></a>
-         <a href="https://x.com/iamAyushgopal"><i class="fa-brands fa-x-twitter"></i></a>
-            
-
-
-        </div>
-                <a href="mailto:ayushgopal17@gmail.com?subject=Hiring%20Opportunity&body=Hi%20Ayush," class="btn">
-    Hire me
-</a>
-<a href="https://drive.google.com/file/d/1Imkj16IX5a2vvoZdsW53DpX3qdZWdIUm/view?usp=drive_link" target="_blank" class="btn">View Resume</a>
-    </div>
-    </section>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+<section class="hero" id="home">
+<div class="hero-copy"><h1>Hi, I'm Ayush</h1><p class="tagline">Full-stack developer with a focus on backend systems, APIs, and the web.</p>
+<button class="email-button" data-copy-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><span>ayushgopal17@gmail.com</span></button></div>
+<img class="avatar" src="assets/profile.jpg" alt="Ayush Gopal" width="160" height="160">
+</section>
+<section id="about" class="reveal"><h2>About</h2><p class="about-copy">I'm a final-year Computer Science student at G.L. Bajaj, specializing in AI & Data Science. I build full-stack applications with React, TypeScript, Node.js, and PostgreSQL, and especially enjoy working on APIs and database design. Recently, I've been building an order-matching engine and a team collaboration platform. I'm currently learning AI and exploring how to use it in web applications. I also contribute to open source and practice problem-solving in Java. I'm looking for a full-stack or backend developer role.</p></section>
+<section id="skills" class="reveal"><h2>Skills</h2><div class="tags skills"><span class="pill-tag">Java</span><span class="pill-tag">JavaScript</span><span class="pill-tag">TypeScript</span><span class="pill-tag">SQL</span><span class="pill-tag">React.js</span><span class="pill-tag">Next.js</span><span class="pill-tag">Tailwind CSS</span><span class="pill-tag">HTML</span><span class="pill-tag">CSS</span><span class="pill-tag">Framer Motion</span><span class="pill-tag">Node.js</span><span class="pill-tag">Express</span><span class="pill-tag">REST APIs</span><span class="pill-tag">JWT</span><span class="pill-tag">PostgreSQL</span><span class="pill-tag">Prisma</span><span class="pill-tag">MongoDB</span><span class="pill-tag">Docker</span></div><h3 class="tools-heading">Tools</h3><div class="tags"><span class="pill-tag">Git</span><span class="pill-tag">GitHub</span><span class="pill-tag">Postman</span><span class="pill-tag">Vercel</span><span class="pill-tag">Codex</span></div></section>
+<section id="projects"><div class="section-heading reveal"><span class="section-badge">Projects</span><h2>Things I've built</h2><p>A few projects I've been working on. Code and demos below.</p></div><div class="projects"><article class="project reveal"><h3>Mini Centralized Exchange</h3><p>A cryptocurrency exchange backend with an in-memory order book, price-time matching, and balance locking for concurrent trades.</p><a class="project-preview preview-exchange" href="https://centralised-exchange-one.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Visit Mini Centralized Exchange live website"><img src="assets/projects/exchange.png" alt="Mini Centralized Exchange website screenshot" width="2880" height="1800" loading="lazy" decoding="async"></a><div class="tags"><span class="pill-tag">Node.js</span><span class="pill-tag">TypeScript</span><span class="pill-tag">Express</span><span class="pill-tag">PostgreSQL</span><span class="pill-tag">Prisma</span></div><div class="project-links"><a class="link-pill" href="https://centralised-exchange-one.vercel.app" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><path d="M2 12h20"/></svg>Website</a><a class="link-pill" href="https://github.com/ayushgopal17/cex-v1" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.7.9-1 2-1 3.5v4"/></svg>Source</a></div></article>
+<article class="project reveal"><h3>WorkSync</h3><p>A team collaboration platform with organizations, boards, task assignments, and JWT authentication.</p><a class="project-preview preview-worksync" href="https://work-sync-peach.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Visit WorkSync live website"><img src="assets/projects/worksync.png" alt="WorkSync website screenshot" width="2880" height="1800" loading="lazy" decoding="async"></a><div class="tags"><span class="pill-tag">React</span><span class="pill-tag">Node.js</span><span class="pill-tag">Express</span><span class="pill-tag">PostgreSQL</span><span class="pill-tag">Prisma</span></div><div class="project-links"><a class="link-pill" href="https://work-sync-peach.vercel.app" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><path d="M2 12h20"/></svg>Website</a><a class="link-pill" href="https://github.com/ayushgopal17/WorkSync" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.7.9-1 2-1 3.5v4"/></svg>Source</a></div></article>
+<article class="project reveal"><h3>Agency.AI</h3><p>A responsive agency website with theme switching, Framer Motion animations, and a contact form powered by Web3Forms.</p><a class="project-preview preview-agency" href="https://agency-ai-eight-chi.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Visit Agency.AI live website"><img src="assets/projects/agency.png" alt="Agency.AI website screenshot" width="2880" height="1800" loading="lazy" decoding="async"></a><div class="tags"><span class="pill-tag">React</span><span class="pill-tag">Tailwind CSS</span><span class="pill-tag">Framer Motion</span></div><div class="project-links"><a class="link-pill" href="https://agency-ai-eight-chi.vercel.app" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><path d="M2 12h20"/></svg>Website</a><a class="link-pill" href="https://github.com/ayushgopal17/Agency-ai" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.7.9-1 2-1 3.5v4"/></svg>Source</a></div></article>
+<article class="project reveal"><h3>FrameAi</h3><p>An AI video creation landing page with a video showcase, prompt previews, and responsive layouts. Built with Next.js and TypeScript.</p><a class="project-preview preview-frameai" href="https://frame-ai-ruddy.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Visit FrameAi live website"><img src="assets/projects/frameai.png" alt="FrameAi website screenshot" width="2880" height="1800" loading="lazy" decoding="async"></a><div class="tags"><span class="pill-tag">TypeScript</span><span class="pill-tag">Next.js</span><span class="pill-tag">Tailwind CSS</span></div><div class="project-links"><a class="link-pill" href="https://frame-ai-ruddy.vercel.app" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><path d="M2 12h20"/></svg>Website</a><a class="link-pill" href="https://github.com/ayushgopal17/FrameAi" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.7.9-1 2-1 3.5v4"/></svg>Source</a></div></article>
+</div></section>
+<section id="activity" class="reveal"><h2>GitHub activity</h2><div class="activity-card"><div class="activity-heading"><span id="contribution-count">1,257 contributions in the past year</span><a href="https://github.com/ayushgopal17" target="_blank" rel="noopener noreferrer">@ayushgopal17 ↗</a></div><div class="activity-scroll" tabindex="0" role="region" aria-label="GitHub contribution calendar, scroll horizontally on small screens"><img src="assets/github-activity.svg" width="744" height="130" alt="Ayush Gopal’s daily GitHub contributions over the past year" loading="lazy"></div><div class="activity-footer"><span id="activity-updated">Updated 18 Sep 2026</span><div class="activity-legend" aria-label="Contribution intensity from less to more">Less <i></i><i></i><i></i><i></i><i></i> More</div></div></div></section>
+<section id="achievements"><div class="section-heading reveal"><span class="section-badge">Along the way</span><h2>Achievements & contributions</h2></div><div class="roadmap">
+<article class="roadmap-entry reveal"><div class="roadmap-rail"><span class="roadmap-node logo-node"><img src="assets/logos/flipkart.png" alt="Flipkart logo" width="56" height="56" loading="lazy"></span><span class="roadmap-spine"></span></div><div class="roadmap-body"><h3>Flipkart GRID 8.0</h3><p>Semi-finalist — qualified for Round 3 after resume shortlisting and the online assessment.</p><div class="roadmap-separator"></div></div></article>
+<article class="roadmap-entry reveal"><div class="roadmap-rail"><span class="roadmap-node logo-node"><img src="assets/logos/hacktoberfest.svg" alt="Hacktoberfest logo" width="56" height="56" loading="lazy"></span><span class="roadmap-spine"></span></div><div class="roadmap-body"><h3>Hacktoberfest</h3><p>Merged 6 pull requests across open-source repositories.</p><div class="roadmap-separator"></div></div></article>
+<article class="roadmap-entry reveal"><div class="roadmap-rail"><span class="roadmap-node logo-node"><img src="assets/logos/gssoc-orange.svg" alt="GirlScript Summer of Code logo" width="56" height="56" loading="lazy"></span><span class="roadmap-spine"></span></div><div class="roadmap-body"><h3>GirlScript Summer of Code</h3><p>Open-source contributor.</p><div class="roadmap-separator"></div></div></article>
+<article class="roadmap-entry reveal"><div class="roadmap-rail"><span class="roadmap-node logo-node"><img src="assets/logos/wemakedevs.svg" alt="WeMakeDevs logo" width="56" height="56" loading="lazy"></span></div><div class="roadmap-body"><h3>Backend Reloaded Hackathon</h3><p>Participated with a Telegram alert workflow built using Motia.</p></div></article>
+</div></section>
+<section id="education" class="reveal"><h2>Education</h2><article class="bordered-card"><p class="date">September 2023 — April 2027 (expected)</p><h3>G.L. Bajaj Institute of Technology and Management</h3><p>B.Tech in Computer Science (AI & Data Science)</p><p>Greater Noida, India</p></article></section>
+</main>
+<div class="bottom-fade" aria-hidden="true"></div>
+<nav class="dock" aria-label="Site navigation">
+<a href="#home" aria-label="Home" data-tooltip="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-8H9v8H4a1 1 0 0 1-1-1z"/></svg></a>
+<a href="https://github.com/ayushgopal17" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-tooltip="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.7.9-1 2-1 3.5v4"/></svg></a>
+<a href="https://www.linkedin.com/in/ayush-gopal-a963b8296/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-tooltip="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 21V9h4v2a6 6 0 0 1 8 5v5h-4v-7a2 2 0 0 0-4 0v7z"/></svg></a>
+<a href="https://drive.google.com/file/d/1-T6yErHjsQB55HGmi9FDxPvSMKHCMNSR/view" target="_blank" rel="noopener noreferrer" aria-label="View resume" data-tooltip="Resume"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M12 3v12m-5-5 5 5 5-5"/></svg></a>
+<button data-copy-email aria-label="Copy email" data-tooltip="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></button>
+<button id="theme-toggle" aria-label="Switch to light mode" data-tooltip="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
+</nav>
+<div id="copy-status" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
