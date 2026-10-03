@@ -18,6 +18,31 @@ themeToggle.addEventListener('click', () => {
 });
 const status = document.getElementById('copy-status');
 let resetTimer;
+const music = document.getElementById('background-music');
+const musicToggle = document.getElementById('music-toggle');
+music.volume = 1;
+function updateMusicToggle() {
+  const playing = !music.paused;
+  musicToggle.setAttribute('aria-pressed', String(playing));
+  musicToggle.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+  musicToggle.dataset.tooltip = playing ? 'Pause music' : 'Play music';
+}
+music.addEventListener('play', updateMusicToggle);
+music.addEventListener('pause', updateMusicToggle);
+musicToggle.addEventListener('click', async () => {
+  if (!music.paused) {
+    music.pause();
+    return;
+  }
+  try {
+    await music.play();
+  } catch {
+    updateMusicToggle();
+    clearTimeout(resetTimer);
+    status.textContent = 'Music could not play. Please try again.';
+    resetTimer = setTimeout(() => { status.textContent = ''; }, 5000);
+  }
+});
 document.querySelectorAll('[data-copy-email]').forEach(button => {
   button.addEventListener('click', async () => {
     clearTimeout(resetTimer);

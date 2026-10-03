@@ -75,6 +75,9 @@ h1 { font-size: 72px; font-weight: 700; line-height: 1.25; letter-spacing: -.025
 .dock { position: fixed; bottom: max(20px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 4px; padding: 8px; border: 1px solid var(--border); border-radius: 999px; background: var(--dock-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 25px 50px -12px #0004; z-index: 10; }
 .dock a, .dock button { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; position: relative; }
 .dock a:hover, .dock button:hover { background: var(--link-bg); }
+.dock #music-toggle[aria-pressed="true"] { background: var(--pill-bg); color: var(--pill-fg); }
+#music-toggle .music-pause, #music-toggle[aria-pressed="true"] .music-note { display: none; }
+#music-toggle[aria-pressed="true"] .music-pause { display: block; }
 [data-tooltip]::after { content: attr(data-tooltip); position: absolute; bottom: 52px; left: 50%; transform: translateX(-50%); padding: 4px 8px; border-radius: 5px; background: var(--pill-bg); color: var(--pill-fg); font-size: 12px; white-space: nowrap; opacity: 0; pointer-events: none; }
 [data-tooltip]:hover::after, [data-tooltip]:focus-visible::after { opacity: 1; }
 .toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: var(--pill-bg); color: var(--pill-fg); padding: 8px 15px; border-radius: 8px; font-size: 14px; z-index: 15; max-width: calc(100% - 40px); text-align: center; }
@@ -137,6 +140,7 @@ h1 { font-size: 72px; font-weight: 700; line-height: 1.25; letter-spacing: -.025
 
 @media (max-width: 359px) {
   .dock { gap: 0; padding: 6px; }
+  .dock a, .dock button { width: 40px; }
 }
 
 .activity-card { border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
