@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e1e1e">
+  <meta name="description" content="Explore Ayush Gopal’s portfolio from Rusty, an interactive browser terminal.">
+  <title>Rusty CLI — Ayush Gopal</title>
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+  <link rel="stylesheet" href="rusty.css">
+  <script src="rusty.js" defer></script>
+</head>
+<body>
+  <main class="terminal-window" aria-label="Rusty portfolio terminal">
+    <header class="window-bar"><span class="window-lights" aria-hidden="true"><i></i><i></i><i></i></span><span>rusty — ayush@portfolio: ~</span><span class="shell-label">zsh</span></header>
+    <section class="identity" aria-label="Ayush Gopal profile">
+      <p class="session-label">RUSTY CLI <span>v1.0.0 / interactive portfolio</span></p>
+      <h1 class="sr-only">Ayush Gopal</h1>
+      <pre class="name-banner" aria-hidden="true"> █████╗ ██╗   ██╗██╗   ██╗███████╗██╗  ██╗
+██╔══██╗╚██╗ ██╔╝██║   ██║██╔════╝██║  ██║
+███████║ ╚████╔╝ ██║   ██║███████╗███████║
+██╔══██║  ╚██╔╝  ██║   ██║╚════██║██╔══██║
+██║  ██║   ██║   ╚██████╔╝███████║██║  ██║
+╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝</pre>
+      <p class="role-line">GOPAL <span>// full-stack &amp; backend developer</span></p>
+      <dl class="profile-links">
+        <div><dt>email</dt><dd><a href="mailto:ayushgopal17@gmail.com">ayushgopal17@gmail.com</a></dd></div>
+        <div><dt>github</dt><dd><a href="https://github.com/ayushgopal17" target="_blank" rel="noopener noreferrer">github.com/ayushgopal17 ↗</a></dd></div>
+        <div><dt>focus</dt><dd>APIs, databases &amp; things that scale</dd></div>
+      </dl>
+    </section>
+    <section class="terminal-panel" aria-label="Command session">
+      <div class="panel-label"><span>terminal</span><span>guest session</span></div>
+      <div class="screen" id="screen" tabindex="0" aria-label="Scrollable command output">
+        <div class="welcome">
+          <p><span class="success">✓</span> Portfolio loaded. Welcome to Rusty.</p>
+          <p>Type <strong>help</strong> to see all available commands.</p>
+          <p class="suggestion-line">Try <strong>about</strong> · <strong>projects</strong> · <strong>skills</strong> · <strong>play</strong> · <strong>themes</strong></p>
+          <p class="muted">Use <strong>exit</strong> to return to the main portfolio.</p>
+        </div>
+        <div id="output" role="log" aria-live="polite" aria-relevant="additions"></div>
+      </div>
+      <form id="command-form" autocomplete="off">
+        <label for="command">guest<span>@rusty</span>:<span>~</span>$<span class="sr-only"> Enter command</span></label>
+        <input id="command" name="command" aria-label="Terminal command" aria-describedby="keyboard-hint" placeholder="type a command..." spellcheck="false" autocapitalize="none" autocomplete="off" autocorrect="off" enterkeyhint="send" maxlength="200">
+      </form>
+    </section>
+    <footer class="terminal-footer"><p id="keyboard-hint"><kbd>Tab</kbd> complete <span>·</span> <kbd>↑ ↓</kbd> history <span>·</span> <kbd>Ctrl L</kbd> clear</p><span id="music-status" role="status">♪ music off</span></footer>
+    <noscript><p>Enable JavaScript to use Rusty. <a href="index.html">Return to portfolio</a></p></noscript>
+  </main>
+  <audio id="rusty-music" src="assets/rusty-music.mp3" preload="none" loop></audio>
+</body>
+</html>

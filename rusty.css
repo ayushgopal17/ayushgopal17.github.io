@@ -1,0 +1,99 @@
+:root {
+  color-scheme: dark;
+  --font-color: #00ff00;
+  --background-color: #1e1e1e;
+  --accent-color: gold;
+  --prompt-color: #00ffff;
+  --input-color: #ffffff;
+  --banner-color: #ff8c00;
+  --command-output-color: #c0c0c0;
+  --link-color: #87cefa;
+  --text-shadow: none;
+  --green: var(--accent-color);
+  --muted: color-mix(in srgb, var(--command-output-color) 80%, var(--background-color));
+  --line: color-mix(in srgb, var(--font-color) 22%, var(--background-color));
+  background: var(--background-color);
+  color: var(--font-color);
+  font: 13px/1.65 Menlo, Monaco, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 36px;
+  background: var(--background-color);
+}
+.terminal-window { width: min(1060px, 100%); background: var(--background-color); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 30px 100px #000b; overflow: hidden; }
+.window-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; height: 40px; padding: 0 16px; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--background-color) 92%, var(--font-color)); font-size: 11px; color: var(--muted); }
+.window-lights { display: flex; gap: 7px; width: 54px; }
+.window-lights i { display: block; width: 9px; height: 9px; border: 1px solid var(--muted); border-radius: 50%; }
+.window-lights i:first-child { background: var(--muted); }
+.shell-label { width: 54px; text-align: right; color: var(--muted); }
+.identity { width: fit-content; max-width: 100%; margin: auto; padding: 26px 20px 28px; }
+p { margin: 0; }
+.session-label { font-size: 10px; letter-spacing: 1.5px; color: var(--green); margin-bottom: 18px; }
+.session-label span { color: var(--muted); letter-spacing: 0; margin-left: 14px; }
+.name-banner { font-size: clamp(7px, 1.5vw, 15px); line-height: 1.15; color: var(--green); margin: 0; text-shadow: 0 0 22px transparent; }
+.role-line { color: var(--green); letter-spacing: 6px; margin: 10px 0 19px; font-size: 16px; }
+.role-line span { color: var(--command-output-color); font-size: 11px; letter-spacing: 0; margin-left: 12px; }
+.profile-links { margin: 0; font-size: 12px; }
+.profile-links div { display: flex; gap: 20px; }
+dt { color: var(--muted); width: 6ch; flex-shrink: 0; } dd { margin: 0; overflow-wrap: anywhere; }
+a { color: inherit; text-decoration: none; } a:hover { color: var(--green); text-decoration: underline; }
+a:focus-visible, .screen:focus-visible { outline: 1px solid var(--green); outline-offset: 3px; }
+.terminal-panel { margin: 0 18px; border: 1px solid var(--line); position: relative; }
+.panel-label { display: flex; justify-content: space-between; position: absolute; top: -12px; left: 12px; right: 12px; pointer-events: none; font-size: 11px; color: var(--green); }
+.panel-label span { padding: 0 7px; background: var(--background-color); }
+.panel-label span:last-child { color: var(--muted); }
+.screen { height: clamp(230px, 30vh, 420px); padding: 22px 16px; overflow: auto; overflow-wrap: anywhere; scrollbar-width: thin; scrollbar-color: var(--line) transparent; cursor: text; }
+.welcome { margin-bottom: 1em; }
+.success, strong { color: var(--green); font-weight: normal; }
+.suggestion-line { margin-top: 13px; }
+.muted { color: var(--muted); }
+.entry { margin-bottom: 16px; }
+.echo { color: var(--green); margin-bottom: 6px; }
+.echo, .response { white-space: pre-wrap; }
+.response h2 { font: inherit; color: var(--green); margin: 1em 0 0; }
+.response p { margin: 0; }
+.response a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+#command-form { display: flex; align-items: baseline; gap: 1ch; padding: 13px 16px; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--background-color) 95%, var(--font-color)); }
+#command-form:focus-within { box-shadow: inset 2px 0 var(--green); }
+#command-form label { white-space: nowrap; color: var(--green); }
+#command-form label span:not(.sr-only) { color: var(--command-output-color); }
+input { flex: 1; min-width: 0; width: 100%; padding: 0; border: 0; border-radius: 0; outline: none; background: transparent; color: var(--green); caret-color: var(--green); font: inherit; }
+input::placeholder { color: var(--muted); }
+.terminal-footer { display: flex; justify-content: space-between; gap: 16px; padding: 12px 20px; font-size: 10px; color: var(--muted); }
+.terminal-footer p span { margin: 0 8px; }
+kbd { color: var(--command-output-color); font: inherit; }
+#music-status { text-align: right; }
+::selection { background: var(--accent-color); color: #000; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 600px) {
+  body { padding: 12px; align-items: start; }
+  .window-bar { font-size: 10px; }
+  .shell-label { display: none; }
+  .identity { padding: 24px 12px; width: 100%; }
+  .name-banner { font-size: clamp(6px, 2.05vw, 12px); }
+  .session-label { letter-spacing: 0; font-size: 9px; }
+  .session-label span { margin-left: 6px; }
+  .role-line span { display: block; margin: 5px 0 0; font-size: 10px; }
+  .profile-links { font-size: 10px; }
+  .profile-links div { gap: 8px; }
+  .terminal-panel { margin: 0 10px; }
+  .screen { padding: 20px 10px; height: 32dvh; min-height: 210px; font-size: 12px; }
+  #command-form { padding: 12px 10px; font-size: 12px; gap: 6px; }
+  input { font-size: 16px; }
+  .terminal-footer { padding: 12px; flex-wrap: wrap; gap: 4px; font-size: 9px; }
+}
+
+/* Apply each reference palette to its corresponding terminal role. */
+.name-banner, .role-line { color: var(--banner-color); text-shadow: none; }
+.session-label, .success, strong { text-shadow: var(--text-shadow); }
+.echo, #command-form label, #command-form label span:not(.sr-only) { color: var(--prompt-color); }
+input { color: var(--input-color); caret-color: var(--input-color); }
+.response { color: var(--command-output-color); }
+a, .response a { color: var(--link-color); }
+::selection { background: var(--accent-color); color: var(--background-color); }
