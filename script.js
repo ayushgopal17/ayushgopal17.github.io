@@ -29,7 +29,82 @@ function updateMusicToggle() {
 }
 music.addEventListener('play', updateMusicToggle);
 music.addEventListener('pause', updateMusicToggle);
+music.addEventListener('ended', updateMusicToggle);
+
+const introMusic = document.getElementById('intro-music');
+const introToggle = document.getElementById('intro-toggle');
+const introStop = document.getElementById('intro-stop');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let introScrollFrame;
+let introScrollActive = false;
+let introScrollStart = 0;
+let introScrollTime = 0;
+
+function stopIntroScroll() {
+  introScrollActive = false;
+  cancelAnimationFrame(introScrollFrame);
+}
+function scrollWithIntro() {
+  if (!introScrollActive || introMusic.paused || introMusic.ended) return;
+  const remaining = introMusic.duration - introScrollTime;
+  if (Number.isFinite(remaining) && remaining > 0) {
+    const progress = Math.min(1, Math.max(0, (introMusic.currentTime - introScrollTime) / remaining));
+    const eased = progress * progress * (3 - 2 * progress);
+    const bottom = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    window.scrollTo({ top: introScrollStart + (bottom - introScrollStart) * eased, behavior: 'instant' });
+  }
+  introScrollFrame = requestAnimationFrame(scrollWithIntro);
+}
+function startIntroScroll() {
+  stopIntroScroll();
+  if (reducedMotion.matches) return;
+  introScrollStart = window.scrollY;
+  introScrollTime = introMusic.currentTime;
+  introScrollActive = true;
+  scrollWithIntro();
+}
+// Manual navigation hands scrolling back to the visitor; the music can continue.
+window.addEventListener('wheel', stopIntroScroll, { passive: true });
+window.addEventListener('touchstart', stopIntroScroll, { passive: true });
+window.addEventListener('pointerdown', stopIntroScroll, { passive: true });
+window.addEventListener('keydown', event => {
+  if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' ', 'Escape', 'Tab'].includes(event.key)) stopIntroScroll();
+});
+reducedMotion.addEventListener('change', stopIntroScroll);
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) introMusic.pause();
+});
+introStop.addEventListener('click', () => introMusic.pause());
+introToggle.title = 'Play the intro and scroll through the portfolio';
+function updateIntroToggle() {
+  const playing = !introMusic.paused && !introMusic.ended;
+  introToggle.textContent = playing ? 'Pause intro' : 'Play intro';
+  introToggle.setAttribute('aria-pressed', String(playing));
+  introStop.hidden = !playing;
+}
+introMusic.addEventListener('play', updateIntroToggle);
+introMusic.addEventListener('play', startIntroScroll);
+introMusic.addEventListener('pause', updateIntroToggle);
+introMusic.addEventListener('pause', stopIntroScroll);
+introMusic.addEventListener('ended', updateIntroToggle);
+introMusic.addEventListener('ended', stopIntroScroll);
+introToggle.addEventListener('click', async () => {
+  if (!introMusic.paused) {
+    introMusic.pause();
+    return;
+  }
+  music.pause();
+  try {
+    await introMusic.play();
+  } catch {
+    updateIntroToggle();
+    clearTimeout(resetTimer);
+    status.textContent = 'Intro could not play. Please try again.';
+    resetTimer = setTimeout(() => { status.textContent = ''; }, 5000);
+  }
+});
 musicToggle.addEventListener('click', async () => {
+  introMusic.pause();
   if (!music.paused) {
     music.pause();
     return;

@@ -37,6 +37,10 @@ main { max-width: 768px; margin: 0 auto; padding: 40px 32px 112px; }
 section { padding: 48px 0; min-width: 0; }
 .hero { padding-top: 64px; padding-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; }
 .hero-copy { min-width: 0; flex: 1; }
+.intro-button { display: inline-flex; align-items: center; min-height: 36px; margin-top: 12px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; color: var(--muted-fg); font-size: 13px; }
+.intro-button:hover, .intro-button[aria-pressed="true"] { background: var(--link-bg); color: var(--fg); }
+.intro-stop { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); z-index: 30; padding: 8px 16px; border: 1px solid var(--border); border-radius: 999px; background: var(--dock-bg); color: var(--fg); font-size: 13px; backdrop-filter: blur(12px); }
+.intro-stop[hidden] { display: none; }
 h1 { font-size: 72px; font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
 .tagline { margin-top: 12px; font-size: 18px; line-height: 1.625; color: var(--muted-fg); }
 .avatar { height: 160px; width: 160px; border-radius: 50%; object-fit: cover; object-position: center 28%; flex-shrink: 0; }

@@ -17,7 +17,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <main id="main">
 <section class="hero" id="home">
-<div class="hero-copy"><h1>Hi, I'm Ayush</h1><p class="tagline">Full-stack developer with a focus on backend systems, APIs, and the web.</p>
+<div class="hero-copy"><h1>Hi, I'm Ayush</h1><button id="intro-toggle" class="intro-button" type="button" aria-pressed="false">Play intro</button><p class="tagline">Full-stack developer with a focus on backend systems, APIs, and the web.</p>
 <button class="email-button" data-copy-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><span>ayushgopal17@gmail.com</span></button></div>
 <img class="avatar" src="assets/profile.jpg" alt="Ayush Gopal" width="160" height="160">
 </section>
@@ -47,6 +47,8 @@
 <button id="theme-toggle" aria-label="Switch to light mode" data-tooltip="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
 <button id="music-toggle" type="button" aria-label="Play music" aria-pressed="false" data-tooltip="Play music"><svg class="music-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13M9 9l12-2"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="18" cy="16" rx="3" ry="3"/></svg><svg class="music-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg></button>
 </nav>
+<button id="intro-stop" class="intro-stop" type="button" hidden>Pause intro</button>
+<audio id="intro-music" src="assets/new-intro.mp3" preload="metadata"></audio>
 <audio id="background-music" src="assets/music.mp3" preload="none" loop></audio>
 <div id="copy-status" class="toast" role="status" aria-live="polite"></div>
 </body>
